@@ -1,6 +1,6 @@
 const net = require('net');
 const { Console } = require('console');
-const { IP, PORT } = require('./constants');
+const { IP, PORT, name } = require('./constants');
 
 
 
@@ -15,12 +15,7 @@ const connect = function () {
   //When connected to the client, log a message
   conn.on('connect', () => {
     console.log('Connected to server');
-    conn.write("Name: JEP")
-    setTimeout(()=> {
-      conn.write('Move: up')
-    }, 1000)
-    
-    
+    conn.write(`Name: ${name}`)
   })
 
   //When data is recieved, transform the data to a string
