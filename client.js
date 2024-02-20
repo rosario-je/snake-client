@@ -1,6 +1,6 @@
 const net = require('net');
 const { Console } = require('console');
-const { setupInput } = require('./input')
+
 
 
 // establishes a connection with the game server
@@ -31,17 +31,10 @@ const connect = function () {
 
   //When the connection with the server is ended, log a disconnect message.
   conn.on('end', () => {
-    console.log('Disconnected from server');
+    console.log('Disconnected from server due to being idle');
   })
   
   return conn;
 };
 
-
-setupInput();
-
-
-module.exports = {
-  connect,
-  setupInput
-}
+module.exports = { connect }

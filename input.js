@@ -13,6 +13,7 @@ const handleUserInput = function (data) {
     setTimeout(() => {
       process.exit();
     },2000)
+    console.log('Disconnected from server')
   }
 };
 
