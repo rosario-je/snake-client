@@ -39,7 +39,7 @@ const handleUserInput = function (data) {
   let value = movement[data]
   //if a certain key in this object is pressed
   if (value){
-    value(); //Run the function corresponding to the key which triggers movement
+    value(); //Run the function corresponding to the key which triggers
   }
 };
 

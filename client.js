@@ -16,6 +16,9 @@ const connect = function () {
   conn.on('connect', () => {
     console.log('Connected to server');
     conn.write(`Name: ${name}`)
+    setTimeout(()=> {
+      conn.write('Move: up')
+    }, 1000)
   })
 
   //When data is recieved, transform the data to a string
