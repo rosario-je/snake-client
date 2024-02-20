@@ -11,6 +11,7 @@ const connect = function () {
   //When connected to the client, log a message
   conn.on('connect', () => {
     console.log('Connected to server');
+    console.log('Name: JEP');
   })
 
   //When data is recieved, transform the data to a string
