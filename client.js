@@ -24,7 +24,7 @@ const connect = function () {
 
   })
   // interpret incoming data as text
-  // conn.setEncoding("utf8");
+  conn.setEncoding("utf8");
 
   //When the connection with the server is ended, log a disconnect message.
   conn.on('end', () => {
@@ -35,4 +35,4 @@ const connect = function () {
   return conn;
 };
 
-module.exports = { connect };
+module.exports = { connect }
