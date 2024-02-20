@@ -19,8 +19,10 @@ const handleUserInput = function (data) {
       process.exit();
     }, 2000)
     console.log('Disconnected from server')
+  } else if (data === 'm'){
+    connection.write('Say: This game is amazing!')
   }
-  const movement = {
+    const movement = {
     'w': () => connection.write('Move: up'),
     's': () => connection.write('Move: down'),
     'a': () => connection.write('Move: left'),
