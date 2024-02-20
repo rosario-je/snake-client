@@ -31,7 +31,8 @@ const connect = function () {
 
   //When the connection with the server is ended, log a disconnect message.
   conn.on('end', () => {
-    console.log('Disconnected from server due to being idle');
+    console.log('Disconnecting from server.');
+    process.exit();
   })
   
   return conn;
