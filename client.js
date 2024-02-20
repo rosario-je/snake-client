@@ -11,12 +11,18 @@ const connect = function () {
   //When connected to the client, log a message
   conn.on('connect', () => {
     console.log('Connected to server');
-    console.log('Name: JEP');
+    conn.write("Name: JEP")
+    setTimeout(()=> {
+      conn.write('Move: up')
+    }, 1000)
+    
+    
   })
 
   //When data is recieved, transform the data to a string
   conn.on('data', (data) => {
     console.log(data.toString());
+    
   })
   // interpret incoming data as text
   // conn.setEncoding("utf8");
