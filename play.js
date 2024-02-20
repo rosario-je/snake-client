@@ -7,9 +7,23 @@ const connect = function () {
     port: 50541,// PORT number here,
   });
 
-  // interpret incoming data as text
-  conn.setEncoding("utf8");
+  //When connected to the client, log a message
+  conn.on('connect', () => {
+    console.log('Connected to server');
+  })
 
+  //When data is recieved, transform the data to a string
+  conn.on('data', (data) => {
+    console.log(data.toString());
+  })
+  // interpret incoming data as text
+  // conn.setEncoding("utf8");
+
+  //When the connection with the server is ended, log a disconnect message.
+  conn.on('end', () => {
+    console.log('Disconnected from server');
+  })
+  
   return conn;
 };
 
